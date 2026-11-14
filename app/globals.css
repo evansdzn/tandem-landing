@@ -632,7 +632,7 @@ img {
 }
 .statement .icon-pill {
   vertical-align: middle;
-  margin: -0.2em 6px 0;
+  margin: 0 6px 0;
 }
 .statement__line--muted {
   color: var(--muted);
@@ -647,9 +647,9 @@ img {
   width: var(--pill);
   min-width: var(--pill);
   max-width: var(--pill);
-  /*height: var(--pill);*/
+  height: var(--pill);
   min-height: var(--pill);
-  /*max-height: var(--pill);*/
+  max-height: var(--pill);
   aspect-ratio: 1 / 1;
   flex: 0 0 var(--pill);
   padding: 0;
