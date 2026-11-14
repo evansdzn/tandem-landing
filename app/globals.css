@@ -637,15 +637,32 @@ img {
 .statement__line--muted {
   color: var(--muted);
 }
+/* Locked to a true circle: fixed equal sides, no stretching from the text line it sits in. */
 .icon-pill {
+  --pill: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 100px;
+  box-sizing: border-box;
+  width: var(--pill);
+  min-width: var(--pill);
+  max-width: var(--pill);
+  height: var(--pill);
+  min-height: var(--pill);
+  max-height: var(--pill);
+  aspect-ratio: 1 / 1;
+  flex: 0 0 var(--pill);
+  padding: 0;
+  line-height: 0;
+  border-radius: 50%;
+  overflow: hidden;
   background: var(--brand);
-  flex-shrink: 0;
+  transform-origin: 50% 50%;
+}
+.icon-pill img {
+  width: calc(var(--pill) * 0.48);
+  height: calc(var(--pill) * 0.48);
+  flex: none;
 }
 .highlights {
   display: flex;
@@ -2055,12 +2072,7 @@ img {
     margin-inline: 4px;
   }
   .icon-pill {
-    width: 36px;
-    height: 36px;
-  }
-  .icon-pill img {
-    width: 18px;
-    height: 18px;
+    --pill: 36px;
   }
   .highlights {
     flex-direction: column;
